@@ -1,2 +1,11 @@
 # fix-this-website-1
-Trouvez les erreurs dans ce site web et corrigez les !
+
+Faites un fork de ce projet, trouvez les erreurs dans le fichier index.html et corrigez les !
+
+* Une capture d'écran du site fonctionnel se trouve dans le repo. Elle représente le site lorsque la souris survole le titre du site.
+* il y a 5 erreurs au total à corriger. Certaines peuvent être déduite de la capture d'écran, d'autres sont à deviner
+* mots clés : `classList`, `selecteurs CSS`, `setInterval`
+
+N'oubliez pas de commiter vos modifications une fois terminé !
+
+Bon courage !
