@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Une page qui marche (presque)</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-image: url(http://www.caninfelin.fr/images/produits/45302.jpg);
+        }
+        .container {
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+            line-height: 60px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .megacolor {
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+7,0.8+7,1+19,1+81,0.8+94,0+100 */
+            background: -moz-linear-gradient(top,  rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 7%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 94%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 7%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 94%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 7%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 94%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799',GradientType=0 ); /* IE6-9 */
+
+            color: white;
+        }
+
+        .image-invisible {
+            display: none;
+        }
+
+        a.poulet {
+            color: white;
+        }
+
+        .poulet.rouge {
+            background-color: red;
+        }
+
+        .poulet.bleu {
+            background-color: blue;
+        }
+
+        .image-tourne {
+            position: relative;
+            top: 100px;
+            width: 265px;
+
+            -webkit-animation: rotating 2s linear infinite;
+            -moz-animation: rotating 2s linear infinite;
+            -ms-animation: rotating 2s linear infinite;
+            -o-animation: rotating 2s linear infinite;
+            animation: rotating 2s linear infinite;
+        }
+
+        @-webkit-keyframes rotating /* Safari and Chrome */ {
+            from {
+                -ms-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            to {
+                -ms-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes rotating {
+            from {
+                -ms-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            to {
+                -ms-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Le site de référence des poulets en plastique</h1>
+        </div>
+        <div class="col-md-3">
+            <div class="list-group">
+                <a class="list-group-item disabled">
+                    Nos poulets
+                </a>
+                <a class="list-group-item poulet rouge">Poulets rouges</a>
+                <a class="list-group-item bleu">Poulets bleus</a>
+                <a class="list-group-item poulet vert">Poulets verts</a>
+                <a class="list-group-item disabled">
+                    Notre société
+                </a>
+                <a class="list-group-item">Nos valeurs</a>
+                <a class="list-group-item">Nous contacter</a>
+                <a class="list-group-item">Notre ferme</a>
+            </div>
+        </div>
+        <div class="col-md-9 text-center">
+
+            <div>Cela fait <span id="time">0</span> secondes que vous êtes sur cette page</div>
+
+            <button class="btn btn-primary btn-poulet-du-mois">Cliquez pour afficher le poulet du mois</button>
+            <br>
+            <img src="http://www.animaloo.fr/images/photos/grandes/poulet2.JPG" class="img-poulet-du-mois image-invisible image-tourne">
+        </div>
+    </div>
+</div>
+
+<script>
+    // on récupere le titre h1
+    var titre = document.querySelector('h1');
+    // action lorsque la souris arrive dessus
+    titre.addEventListener('mouseenter',function(){
+        // on ajoute la classe megacolor au titre
+    });
+    // action lorsque la souris sort de la zone
+    titre.addEventListener('mouseleave',function(){
+        // on enleve la classe megacolor du titre
+        titre.classList.remove('megacolor');
+    });
+
+    // afficher le poulet du mois
+    var boutonPouletDuMois = document.querySelector('.btn-poulet-du-mois');
+    var imagePouletDuMois = document.querySelector('.img-poulet-du-mois');
+    boutonPouletDuMois.addEventListener('click',function(){
+    });
+
+    // décompte du temps passé sur la page
+    var time = document.querySelector('#time');
+    var totalSecondes = 0;
+
+    setInterval(function(){
+        totalSecondes++;
+        time.innerText = totalSecondes;
+    },150);
+</script>
+
+</body>
+</html>
