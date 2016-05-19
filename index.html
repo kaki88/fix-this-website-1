@@ -19,18 +19,20 @@
             text-transform: uppercase;
             font-weight: bold;
         }
-        .megacolor {
+        .megacolor:hover{
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+7,0.8+7,1+19,1+81,0.8+94,0+100 */
             background: -moz-linear-gradient(top,  rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 7%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 94%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
             background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 7%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 94%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
             background: linear-gradient(to bottom,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 7%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 94%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799',GradientType=0 ); /* IE6-9 */
-
-            color: white;
         }
 
         .image-invisible {
             display: none;
+        }
+
+        .image-visible {
+            display: visible;
         }
 
         a.poulet {
@@ -43,6 +45,10 @@
 
         .poulet.bleu {
             background-color: blue;
+        }
+
+        .poulet.vert {
+            background-color: green;
         }
 
         .image-tourne {
@@ -96,7 +102,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Le site de référence des poulets en plastique</h1>
+            <h1 class="megacolor">Le site de référence des poulets en plastique</h1>
         </div>
         <div class="col-md-3">
             <div class="list-group">
@@ -104,7 +110,7 @@
                     Nos poulets
                 </a>
                 <a class="list-group-item poulet rouge">Poulets rouges</a>
-                <a class="list-group-item bleu">Poulets bleus</a>
+                <a class="list-group-item poulet bleu">Poulets bleus</a>
                 <a class="list-group-item poulet vert">Poulets verts</a>
                 <a class="list-group-item disabled">
                     Notre société
@@ -135,13 +141,14 @@
     // action lorsque la souris sort de la zone
     titre.addEventListener('mouseleave',function(){
         // on enleve la classe megacolor du titre
-        titre.classList.remove('megacolor');
     });
 
     // afficher le poulet du mois
     var boutonPouletDuMois = document.querySelector('.btn-poulet-du-mois');
     var imagePouletDuMois = document.querySelector('.img-poulet-du-mois');
     boutonPouletDuMois.addEventListener('click',function(){
+        var imagepoulet = document.querySelector('img');
+        imagepoulet.classList.remove('image-invisible');
     });
 
     // décompte du temps passé sur la page
@@ -151,7 +158,7 @@
     setInterval(function(){
         totalSecondes++;
         time.innerText = totalSecondes;
-    },250);
+    },1000);
 </script>
 
 </body>
