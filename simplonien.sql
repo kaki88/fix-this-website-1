@@ -52,3 +52,8 @@ CREATE TABLE IF NOT EXISTS `simplonien` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+INSERT INTO `simplonien`( `noms`, `prenoms`, `date_de_naissances`, `promos`, `mails`, `tels`, `liens_cv`, `adresses`, `code_postaux`, `villes`) VALUES ('perrin','olivier','1983-11-04','2016','perrinolivier88@gmail.com','0608857023','https://dl.dropboxusercontent.com/u/14206866/cv/cv.html','44 rue de la Hadrange','88600','LEPANGES SUR VOLOGNE')
